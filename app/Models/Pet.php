@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Pet extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
-        'lastname',
-        'phone',
-        'email',
-        'address',
+        'breed',
+        'age',
+        'comments',
+        'client_id',
     ];
 
-    public function pets(){
-        return $this->hasMany(Pet::class);
+    public function client() {
+        return $this->belongsTo(Client::class);
     }
 }
